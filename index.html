@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio Alberto Aranda González - IT Professional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-primary">JA</span><span class="logo-secondary">.it</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#education">Educación</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="data:image/png;base64,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" alt="Julio Alberto Aranda González">
+                    <span class="status-badge">Disponible</span>
+                </div>
+                <div class="hero-text">
+                    <h1>Julio Alberto Aranda González</h1>
+                    <p class="hero-title">Administrador de TI | Soporte Técnico & Infraestructura</p>
+                    <p class="hero-location">📍 Nuevo Laredo, Tamaulipas, México</p>
+                    <div class="hero-links">
+                        <a href="mailto:j.aranda.it@outlook.com" class="hero-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            j.aranda.it@outlook.com
+                        </a>
+                        <a href="tel:+528671447358" class="hero-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            867-144-7358
+                        </a>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">✉️ Contactar</a>
+                        <a href="#experience" class="btn btn-outline">💼 Ver Experiencia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sobre Mí -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">👤</div>
+                <div>
+                    <h2>Sobre Mí</h2>
+                    <p>Perfil Profesional</p>
+                </div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <blockquote>
+                        <p>Licenciado en Informática con más de 6 años de experiencia en administración de infraestructura TI, soporte técnico y administración de redes en entornos empresariales del sector logístico, financiero y aduanal.</p>
+                        <p>Especializado en administración de Active Directory, Microsoft 365, redes LAN/WAN, CCTV y soporte a sistemas empresariales. Orientado a la mejora continua de procesos mediante el uso estratégico de la tecnología. Con visión para identificar áreas de oportunidad e implementar soluciones que optimicen la operación del negocio.</p>
+                    </blockquote>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card blue">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Empresas</div>
+                    </div>
+                    <div class="stat-card purple">
+                        <div class="stat-number">VISA</div>
+                        <div class="stat-label">Vigente · Auto Propio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Laboral -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon green">💼</div>
+                <div>
+                    <h2>Experiencia Laboral</h2>
+                    <p>Trayectoria Profesional</p>
+                </div>
+            </div>
+            <div class="timeline">
+
+                <!-- Ravisa -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Soporte Técnico</h3>
+                                <p class="company">Ravisa México</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date">📅 2025 — Presente</span>
+                                <span class="timeline-location">📍 Nuevo Laredo, Tamps.</span>
+                                <span class="timeline-type">Tiempo completo</span>
+                            </div>
+                        </div>
+                        <p class="timeline-desc">Soporte técnico y administración de infraestructura TI en empresa del sector industrial.</p>
+                        <div class="timeline-achievements">
+                            <h4>🔧 Responsabilidades</h4>
+                            <ul>
+                                <li>Soporte técnico y mantenimiento a infraestructura TI</li>
+                                <li>Administración de Active Directory</li>
+                                <li>Gestión de inventario de activos TI</li>
+                                <li>Administración de red y monitoreo de CCTV</li>
+                                <li>Control de dispositivos móviles</li>
+                                <li>Implementación de mejoras y optimización de procesos</li>
+                                <li>Trato con proveedores tecnológicos</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">CCTV</span>
+                            <span class="tech-tag">Networking</span>
+                            <span class="tech-tag">MDM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ventus -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Soporte Técnico</h3>
+                                <p class="company">Ventus Global Logistics</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date">📅 2024 — 2025</span>
+                                <span class="timeline-location">📍 Nuevo Laredo, Tamps.</span>
+                                <span class="timeline-type">Tiempo completo</span>
+                            </div>
+                        </div>
+                        <p class="timeline-desc">Soporte técnico en empresa de logística global con operaciones en la frontera Nuevo Laredo–Laredo.</p>
+                        <div class="timeline-achievements">
+                            <h4>🔧 Responsabilidades</h4>
+                            <ul>
+                                <li>Administración de Microsoft 365 y control de accesos</li>
+                                <li>Gestión de inventario de activos TI</li>
+                                <li>Administración de red con UniFi</li>
+                                <li>Soporte a sistemas empresariales DARWIN y LUCY</li>
+                                <li>Monitoreo de CCTV y control de dispositivos móviles</li>
+                                <li>Cableado estructurado y cotizaciones</li>
+                                <li>Implementación de mejoras tecnológicas</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Microsoft 365</span>
+                            <span class="tech-tag">UniFi</span>
+                            <span class="tech-tag">DARWIN</span>
+                            <span class="tech-tag">LUCY</span>
+                            <span class="tech-tag">CCTV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FX Cash -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Administrador de TI</h3>
+                                <p class="company">Centro Cambiario FX Cash</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date">📅 2019 — 2024</span>
+                                <span class="timeline-location">📍 Nuevo Laredo, Tamps.</span>
+                                <span class="timeline-type">Tiempo completo</span>
+                            </div>
+                        </div>
+                        <p class="timeline-desc">Administración integral de TI para centro cambiario con múltiples sucursales.</p>
+                        <div class="timeline-achievements">
+                            <h4>🔧 Responsabilidades</h4>
+                            <ul>
+                                <li>Administración de infraestructura TI: equipos, servidores y red</li>
+                                <li>Gestión y mantenimiento de base de datos MySQL</li>
+                                <li>Soporte remoto a sucursales y usuarios</li>
+                                <li>Implementación de respaldos y continuidad operativa</li>
+                                <li>Administración de redes, cableado estructurado y conmutador</li>
+                                <li>Cotización y adquisición de tecnología</li>
+                                <li>Monitoreo de CCTV</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Servidores</span>
+                            <span class="tech-tag">Soporte Remoto</span>
+                            <span class="tech-tag">Networking</span>
+                            <span class="tech-tag">Backup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KROM -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Auxiliar de TI</h3>
+                                <p class="company">KROM Aduanal</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date">📅 2017 — 2019</span>
+                                <span class="timeline-location">📍 Nuevo Laredo, Tamps.</span>
+                                <span class="timeline-type">Tiempo completo</span>
+                            </div>
+                        </div>
+                        <p class="timeline-desc">Soporte técnico integral en agencia aduanal, con enfoque en administración de sistemas y análisis de datos.</p>
+                        <div class="timeline-achievements">
+                            <h4>🔧 Responsabilidades</h4>
+                            <ul>
+                                <li>Generación de reportes y consultas en SQL Server (SSMS)</li>
+                                <li>Administración de Active Directory y Microsoft 365</li>
+                                <li>Gestión de inventario de activos TI</li>
+                                <li>Administración de red con Kerio Control</li>
+                                <li>Seguimiento de indicadores KPI</li>
+                                <li>Soporte CCTV y soporte general</li>
+                                <li>Propuestas de mejora e implementación de soluciones TI</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Kerio Control</span>
+                            <span class="tech-tag">Microsoft 365</span>
+                            <span class="tech-tag">KPIs</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon purple">⚡</div>
+                <div>
+                    <h2>Habilidades Técnicas</h2>
+                    <p>Stack Tecnológico</p>
+                </div>
+            </div>
+            <div class="skills-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="tab-infra">🖥️ Infraestructura</button>
+                    <button class="tab-btn" data-tab="tab-net">🌐 Redes</button>
+                    <button class="tab-btn" data-tab="tab-soft">🛠️ Software</button>
+                    <button class="tab-btn" data-tab="tab-data">🗃️ Datos</button>
+                </div>
+
+                <div id="tab-infra" class="tab-panel active">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Windows Server / AD</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Microsoft 365</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Soporte Técnico / Helpdesk</span><span>95%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>CCTV / Videovigilancia</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Mantenimiento preventivo/correctivo</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Gestión de activos TI</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-net" class="tab-panel">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Redes LAN/WAN</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Cableado Estructurado</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>UniFi (Ubiquiti)</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Kerio Control</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Administración de conmutadores</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>VPN / Acceso remoto</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-soft" class="tab-panel">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Proxmox VE</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Docker / Contenedores</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Linux (Debian/Ubuntu)</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Cloudflare / DNS</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Control de accesos / Tarjetas</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>MDM / Dispositivos móviles</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-data" class="tab-panel">
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header"><span>SQL Server (SSMS)</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>MySQL</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Reportes / KPIs</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header"><span>Respaldos / BCP</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educación -->
+    <section id="education" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon cyan">🎓</div>
+                <div>
+                    <h2>Educación</h2>
+                    <p>Formación Académica</p>
+                </div>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <span class="edu-year">Licenciatura</span>
+                        <h3>Licenciado en Informática</h3>
+                        <p class="edu-institution">Universidad Autónoma de Tamaulipas</p>
+                        <p class="edu-detail">Facultad de Comercio, Administración y Ciencias Sociales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Idiomas e Información Adicional -->
+    <section id="languages" class="section">
+        <div class="container">
+            <div class="languages-grid">
+                <div class="languages-section">
+                    <div class="section-header small">
+                        <div class="section-icon purple small">🌐</div>
+                        <div>
+                            <h2>Idiomas</h2>
+                            <p>Competencias Lingüísticas</p>
+                        </div>
+                    </div>
+                    <div class="language-list">
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span>🇲🇽 Español</span>
+                                <span class="language-level">Nativo</span>
+                            </div>
+                            <div class="language-bar"><div class="language-progress native"></div></div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span>🇺🇸 Inglés</span>
+                                <span class="language-level">Intermedio (75%)</span>
+                            </div>
+                            <div class="language-bar"><div class="language-progress" style="width:75%;background:linear-gradient(90deg,#3b82f6,#60a5fa)"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interests-section">
+                    <div class="section-header small">
+                        <div class="section-icon pink small">ℹ️</div>
+                        <div>
+                            <h2>Información Adicional</h2>
+                            <p>Datos relevantes</p>
+                        </div>
+                    </div>
+                    <div class="interests-tags">
+                        <span class="interest-tag">✅ VISA Vigente</span>
+                        <span class="interest-tag">🚗 Auto Propio</span>
+                        <span class="interest-tag">🏭 Sector Aduanal</span>
+                        <span class="interest-tag">🚚 Logística</span>
+                        <span class="interest-tag">🏦 Sector Financiero</span>
+                        <span class="interest-tag">🔧 Homelab / Self-hosting</span>
+                        <span class="interest-tag">☁️ Cloud & Infraestructura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="contact-header">
+                <h2>¿Interesado en trabajar juntos?</h2>
+                <p>Disponible para nuevas oportunidades y proyectos de consultoría TI.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <h3>Envíame un mensaje</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Tu email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tu mensaje..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">📤 Enviar mensaje</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:j.aranda.it@outlook.com">j.aranda.it@outlook.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <p class="contact-label">Teléfono</p>
+                            <a href="tel:+528671447358">867-144-7358</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <p class="contact-label">Ubicación</p>
+                            <p>Nuevo Laredo, Tamaulipas, México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 Julio Alberto Aranda González. Todos los derechos reservados.</p>
+                <p>Administrador de TI · Nuevo Laredo, Tamps.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
