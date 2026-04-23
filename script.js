@@ -141,26 +141,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ============================================
-    // FORMULARIO DE CONTACTO
+    // FORMULARIO DE CONTACTO - EmailJS
     // ============================================
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
+        emailjs.init('DyS44pMfSYvEhzkEd');
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Obtener valores del formulario
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Aquí puedes agregar la lógica para enviar el formulario
-            // Por ejemplo, usando fetch() para enviar a un servidor
-            
-            // Mostrar mensaje de éxito
-            alert('¡Gracias por tu mensaje! Te contactaré pronto.');
-            
-            // Limpiar formulario
-            this.reset();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '⏳ Enviando...';
+            submitBtn.disabled = true;
+
+            const nameInput = this.querySelector('input[type="text"]');
+            const emailInput = this.querySelector('input[type="email"]');
+            const messageInput = this.querySelector('textarea');
+
+            emailjs.send('service_64w8sha', 'template_ypms9v3', {
+                from_name: nameInput.value,
+                from_email: emailInput.value,
+                message: messageInput.value
+            }).then(() => {
+                submitBtn.textContent = '✅ Mensaje enviado';
+                submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                this.reset();
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 4000);
+            }).catch((error) => {
+                console.error('EmailJS error:', error);
+                submitBtn.textContent = '❌ Error al enviar';
+                submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 4000);
+            });
         });
     }
     
